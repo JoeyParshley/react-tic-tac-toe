@@ -155,11 +155,23 @@ for i in {1..12}; do
         
         if [ $? -eq 0 ]; then
             # Extract issue number from output (format: "https://github.com/owner/repo/issues/123")
-            ISSUE_NUMBER=$(echo "$ISSUE_OUTPUT" | grep -oP 'issues/\K[0-9]+' | head -1)
+            ISSUE_NUMBER=$(echo "$ISSUE_OUTPUT" | grep -o 'issues/[0-9]\+' | sed 's/issues\///' | head -1)
         else
-            echo -e "${RED}Failed to create issue #${i}${NC}"
-            rm "$body_file"
-            continue
+            # If labels failed, try without labels
+            echo -e "${YELLOW}  → Labels not found, creating issue without labels${NC}"
+            ISSUE_OUTPUT=$(gh issue create \
+                --title "Issue #${i}: ${title}" \
+                --body-file "$body_file" \
+                --repo "$REPO" 2>&1)
+            
+            if [ $? -eq 0 ]; then
+                ISSUE_NUMBER=$(echo "$ISSUE_OUTPUT" | grep -o 'issues/[0-9]\+' | sed 's/issues\///' | head -1)
+            else
+                echo -e "${RED}Failed to create issue #${i}${NC}"
+                echo "Error: $ISSUE_OUTPUT"
+                rm "$body_file"
+                continue
+            fi
         fi
     else
         ISSUE_OUTPUT=$(gh issue create \
@@ -168,7 +180,7 @@ for i in {1..12}; do
             --repo "$REPO" 2>&1)
         
         if [ $? -eq 0 ]; then
-            ISSUE_NUMBER=$(echo "$ISSUE_OUTPUT" | grep -oP 'issues/\K[0-9]+' | head -1)
+            ISSUE_NUMBER=$(echo "$ISSUE_OUTPUT" | grep -o 'issues/[0-9]\+' | sed 's/issues\///' | head -1)
         else
             echo -e "${RED}Failed to create issue #${i}${NC}"
             rm "$body_file"
