@@ -17,38 +17,45 @@ This guide explains how to create GitHub issues from the `ISSUES.md` file and se
 
 ## Method 1: Using GitHub CLI (Automated)
 
-### Step 1: Create a GitHub Project
+### Option A: Create Project and Issues Together (Recommended)
 
-```bash
-# Create a new project (interactive)
-gh project create
-
-# Or create via web interface and note the project number
-```
-
-### Step 2: Create Issues from Markdown
-
-Use the provided script to create issues:
+The script can create both the project and issues in one go:
 
 ```bash
 # Make the script executable
 chmod +x scripts/create-github-issues.sh
 
-# Run the script (you'll need to set your repo and project number)
+# Run with --create-project flag to create project and issues
+./scripts/create-github-issues.sh --create-project
+```
+
+This will:
+1. Create a new GitHub project called "Tic Tac Toe Development"
+2. Set up default columns (Backlog, To Do, In Progress, Review, Done)
+3. Create all 12 issues from ISSUES.md
+4. Add all issues to the project board in the "Backlog" column
+
+### Option B: Create Issues Only
+
+If you already have a project or want to create it manually:
+
+```bash
+# Just create issues (no project creation)
 ./scripts/create-github-issues.sh
 ```
 
-### Step 3: Add Issues to Project Board
+### Manual Project Creation
 
-After creating issues, add them to your project board:
+If you prefer to create the project manually:
 
 ```bash
-# List your projects
-gh project list
+# Create a new project (interactive)
+gh project create
 
-# Add an issue to a project (replace PROJECT_NUMBER and ISSUE_NUMBER)
-gh project item-add PROJECT_NUMBER --owner OWNER --repo REPO --url https://github.com/OWNER/REPO/issues/ISSUE_NUMBER
+# Or create via web interface at: https://github.com/YOUR_USERNAME/YOUR_REPO/projects
 ```
+
+Then add issues to your project manually or use the script without the `--create-project` flag.
 
 ## Method 2: Manual Creation via Web Interface
 

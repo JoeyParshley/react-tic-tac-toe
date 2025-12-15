@@ -22,7 +22,10 @@ All project issues are documented in [ISSUES.md](ISSUES.md). To create them in G
 # Make sure GitHub CLI is installed and authenticated
 gh auth login
 
-# Run the automated script
+# Create project and issues together
+./scripts/create-github-issues.sh --create-project
+
+# Or just create issues (if project already exists)
 ./scripts/create-github-issues.sh
 ```
 
