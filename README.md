@@ -4,15 +4,43 @@ A Tic Tac Toe game built with React, TypeScript, and Vite.
 
 ## Project Management
 
-This project is configured for GitHub Projects. See [.github/project-template.md](.github/project-template.md) for setup instructions and best practices.
+This project uses a typed domain-first approach and is managed via GitHub Projects. All issues are defined in [ISSUES.md](ISSUES.md) and can be automatically created in GitHub.
 
 ### Quick Setup for GitHub Projects
 
 1. Initialize git (if not already done): `git init`
 2. Create a GitHub repository and push your code
 3. Go to your repository → Projects tab → New project
-4. Use the templates in `.github/ISSUE_TEMPLATE/` for creating issues
-5. Link issues and PRs to your project board
+4. Create issues from `ISSUES.md` using one of the methods below
+
+### Creating GitHub Issues
+
+All project issues are documented in [ISSUES.md](ISSUES.md). To create them in GitHub:
+
+#### Option 1: Using GitHub CLI (Recommended)
+```bash
+# Make sure GitHub CLI is installed and authenticated
+gh auth login
+
+# Run the automated script
+./scripts/create-github-issues.sh
+```
+
+#### Option 2: Using Node.js Script
+```bash
+# Set environment variables
+export GITHUB_TOKEN=your_token_here
+export GITHUB_OWNER=your_username
+export GITHUB_REPO=ticTacToe
+
+# Run the script
+node scripts/create-issues.js
+```
+
+#### Option 3: Manual Creation
+Copy each issue from [ISSUES.md](ISSUES.md) and create them manually via the GitHub web interface.
+
+For detailed instructions, see [.github/ISSUE_CREATION_GUIDE.md](.github/ISSUE_CREATION_GUIDE.md).
 
 ## Development
 
