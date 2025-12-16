@@ -70,19 +70,19 @@ Create a Board domain model that represents the 3x3 grid with type-safe position
 Implement the core game logic for making moves with proper validation. This includes checking if a cell is empty and if the game is still in a playable state.
 
 ### Tasks
-- [ ] Create `makeMove` function that takes: board, position, and player
-- [ ] Validate that the position is within bounds
-- [ ] Validate that the cell at the position is empty
-- [ ] Validate that the game is still in 'playing' state
-- [ ] Return a new board with the move applied
-- [ ] Handle error cases appropriately (throw errors or return Result type)
+- [x] Create `makeMove` function that takes: board, position, and player
+- [x] Validate that the position is within bounds
+- [x] Validate that the cell at the position is empty
+- [x] Validate that the game is still in 'playing' state
+- [x] Return a new board with the move applied
+- [x] Handle error cases appropriately (throw errors or return Result type)
 
 ### Acceptance Criteria
-- [ ] Cannot make a move on an occupied cell
-- [ ] Cannot make a move outside the board boundaries
-- [ ] Cannot make a move when game is already won or drawn
-- [ ] Move function is pure (no side effects)
-- [ ] Error messages are clear and helpful
+- [x] Cannot make a move on an occupied cell
+- [x] Cannot make a move outside the board boundaries
+- [x] Cannot make a move when game is already won or drawn
+- [x] Move function is pure (no side effects)
+- [x] Error messages are clear and helpful
 
 ### Files to Create
 - `src/domain/gameLogic.ts` or add to `src/domain/Game.ts`
