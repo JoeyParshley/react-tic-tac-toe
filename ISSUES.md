@@ -39,18 +39,18 @@ Define the core domain types that will be used throughout the game logic. These 
 Create a Board domain model that represents the 3x3 grid with type-safe position handling. The board should be immutable and provide methods for querying and updating cells.
 
 ### Tasks
-- [ ] Create `Board` class or type that represents a 3x3 grid
-- [ ] Implement type-safe position validation (ensure row/col are 0-2)
-- [ ] Implement methods: `getCell(position: Position): Cell`
-- [ ] Implement methods: `setCell(position: Position, cell: Cell): Board` (returns new board)
-- [ ] Implement method: `isEmpty(position: Position): boolean`
-- [ ] Implement method: `getAllCells(): Cell[][]`
+- [x] Create `Board` class or type that represents a 3x3 grid
+- [x] Implement type-safe position validation (ensure row/col are 0-2)
+- [x] Implement methods: `getCell(position: Position): Cell`
+- [x] Implement methods: `setCell(position: Position, cell: Cell): Board` (returns new board)
+- [x] Implement method: `isEmpty(position: Position): boolean`
+- [x] Implement method: `getAllCells(): Cell[][]`
 
 ### Acceptance Criteria
-- [ ] Board is immutable (operations return new instances)
-- [ ] Position validation throws errors for invalid positions
-- [ ] Board can be initialized as empty or with a specific state
-- [ ] All methods are type-safe
+- [x] Board is immutable (operations return new instances)
+- [x] Position validation throws errors for invalid positions
+- [x] Board can be initialized as empty or with a specific state
+- [x] All methods are type-safe
 
 ### Files to Create
 - `src/domain/Board.ts`
