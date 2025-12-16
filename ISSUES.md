@@ -14,15 +14,15 @@ This file contains all issues for the tic-tac-toe game project. Each issue can b
 Define the core domain types that will be used throughout the game logic. These types form the foundation of our typed domain-first approach.
 
 ### Tasks
-- [ ] Create `Player` type: `'X' | 'O'`
-- [ ] Create `Cell` type: `'empty' | 'X' | 'O'`
-- [ ] Create `Position` type/interface with `row: number` and `col: number` (0-2)
-- [ ] Create `GameState` type: `'playing' | 'won' | 'draw'`
+- [x] Create `Player` type: `'X' | 'O'`
+- [x] Create `Cell` type: `'empty' | 'X' | 'O'`
+- [x] Create `Position` type/interface with `row: number` and `col: number` (0-2)
+- [x] Create `GameState` type: `'playing' | 'won' | 'draw'`
 
 ### Acceptance Criteria
-- [ ] All types are defined in a dedicated domain types file (e.g., `src/domain/types.ts`)
-- [ ] Types are exported and ready to be used by other domain modules
-- [ ] Types follow TypeScript best practices (discriminated unions where appropriate)
+- [x] All types are defined in a dedicated domain types file (e.g., `src/domain/types.ts`)
+- [x] Types are exported and ready to be used by other domain modules
+- [x] Types follow TypeScript best practices (discriminated unions where appropriate)
 
 ### Files to Create
 - `src/domain/types.ts`
