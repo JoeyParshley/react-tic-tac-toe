@@ -103,19 +103,19 @@ Implement the core game logic for making moves with proper validation. This incl
 Implement win detection logic that checks all possible winning conditions: rows, columns, and both diagonals.
 
 ### Tasks
-- [ ] Create `checkWin` function that takes a board and returns the winning player or null
-- [ ] Check all 3 rows for a winner
-- [ ] Check all 3 columns for a winner
-- [ ] Check the main diagonal (top-left to bottom-right)
-- [ ] Check the anti-diagonal (top-right to bottom-left)
-- [ ] Return the winning player ('X' or 'O') or null if no winner
+- [x] Create `checkWin` function that takes a board and returns the winning player or null
+- [x] Check all 3 rows for a winner
+- [x] Check all 3 columns for a winner
+- [x] Check the main diagonal (top-left to bottom-right)
+- [x] Check the anti-diagonal (top-right to bottom-left)
+- [x] Return the winning player ('X' or 'O') or null if no winner
 
 ### Acceptance Criteria
-- [ ] Correctly detects horizontal wins
-- [ ] Correctly detects vertical wins
-- [ ] Correctly detects diagonal wins
-- [ ] Returns null when there's no winner
-- [ ] Function is pure and testable
+- [x] Correctly detects horizontal wins
+- [x] Correctly detects vertical wins
+- [x] Correctly detects diagonal wins
+- [x] Returns null when there's no winner
+- [x] Function is pure and testable
 
 ### Files to Create
 - Add to `src/domain/gameLogic.ts` or `src/domain/Game.ts`
@@ -136,16 +136,16 @@ Implement win detection logic that checks all possible winning conditions: rows,
 Implement logic to detect when the game ends in a draw (board is full with no winner).
 
 ### Tasks
-- [ ] Create `checkDraw` function that takes a board
-- [ ] Check if the board is full (no empty cells)
-- [ ] Check that there is no winner
-- [ ] Return true if both conditions are met, false otherwise
+- [x] Create `checkDraw` function that takes a board
+- [x] Check if the board is full (no empty cells)
+- [x] Check that there is no winner
+- [x] Return true if both conditions are met, false otherwise
 
 ### Acceptance Criteria
-- [ ] Correctly identifies draw when board is full and no winner
-- [ ] Does not return draw if there's a winner
-- [ ] Does not return draw if board has empty cells
-- [ ] Function is pure and testable
+- [x] Correctly identifies draw when board is full and no winner
+- [x] Does not return draw if there's a winner
+- [x] Does not return draw if board has empty cells
+- [x] Function is pure and testable
 
 ### Files to Create
 - Add to `src/domain/gameLogic.ts` or `src/domain/Game.ts`
@@ -167,24 +167,24 @@ Implement logic to detect when the game ends in a draw (board is full with no wi
 Create a Game domain model that encapsulates the board state, current player, and game status. This will be the main interface for managing game state.
 
 ### Tasks
-- [ ] Create `Game` class or type that contains:
-  - [ ] Board state
-  - [ ] Current player (whose turn it is)
-  - [ ] Game state (playing, won, draw)
-  - [ ] Winner (if game is won)
-- [ ] Implement `makeMove(position: Position): Game` method
-- [ ] Implement `getCurrentPlayer(): Player` method
-- [ ] Implement `getGameState(): GameState` method
-- [ ] Implement `getWinner(): Player | null` method
-- [ ] Implement static `createNewGame(): Game` factory method
-- [ ] Automatically update game state after moves (check win/draw)
+- [x] Create `Game` class or type that contains:
+  - [x] Board state
+  - [x] Current player (whose turn it is)
+  - [x] Game state (playing, won, draw)
+  - [x] Winner (if game is won)
+- [x] Implement `makeMove(position: Position): Game` method
+- [x] Implement `getCurrentPlayer(): Player` method
+- [x] Implement `getGameState(): GameState` method
+- [x] Implement `getWinner(): Player | null` method
+- [x] Implement static `createNewGame(): Game` factory method
+- [x] Automatically update game state after moves (check win/draw)
 
 ### Acceptance Criteria
-- [ ] Game model is immutable (makeMove returns new instance)
-- [ ] Game state is automatically updated after each move
-- [ ] Current player alternates between X and O
-- [ ] Winner is set when game is won
-- [ ] All state transitions are correct
+- [x] Game model is immutable (makeMove returns new instance)
+- [x] Game state is automatically updated after each move
+- [x] Current player alternates between X and O
+- [x] Winner is set when game is won
+- [x] All state transitions are correct
 
 ### Files to Create
 - `src/domain/Game.ts`
